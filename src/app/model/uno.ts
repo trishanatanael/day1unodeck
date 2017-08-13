@@ -4,7 +4,7 @@ export interface Card {
     color: string;
     imageUrl: string;
 }
-export class UnoDeck{
+/*export class UnoDeck{
     private static COLORS: string[] = ["red","green","blue","yellow"]
     private cards: Card[] = [];
     constructor(){
@@ -36,4 +36,4 @@ export class UnoDeck{
     public take(): Card{
         return{this.cards.pop()};
     }
-}
+}*/

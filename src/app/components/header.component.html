@@ -1,15 +1,20 @@
-<h1> Let's play UNO</h1>
+<h1><code>Uno</code></h1>
 <table>
     <th>Number of players:</th>
     <tr>
         <td>
-            <label id ="lblNoPlayers" text = "2"/>
+          <input type="text" id= "number" readonly="true"/>
         </td>
         <td>
-            <button type="button" (click) = incrementValue() >Add</button>
+            <button type="button" onclick = "incrementValue()" id="btnAdd">Add</button>
         </td>
         <td>
-            <button type="button" (click) = decreaseValue()>Remove</button>
+          <button type="button"  onclick = "decreaseValue()"id="btnRemove">Remove</button>
         </td>
+    </tr>
+    <tr>
+      <td>
+         <button type="button" (click) = dealCards()>Start Game</button>
+      </td>
     </tr>
 </table>
