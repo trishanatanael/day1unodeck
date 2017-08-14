@@ -6,15 +6,15 @@
           <input type="text" id= "number" readonly="true"/>
         </td>
         <td>
-            <button type="button" onclick = "incrementValue()" id="btnAdd">Add</button>
+            <button type="button" (click) = "incrementValue()" id="btnAdd">Add</button>
         </td>
         <td>
-          <button type="button"  onclick = "decreaseValue()"id="btnRemove">Remove</button>
+          <button type="button" (click) = "decreaseValue()"id="btnRemove">Remove</button>
         </td>
     </tr>
     <tr>
       <td>
-         <button type="button" (click) = dealCards()>Start Game</button>
+         <button type="button" (click) = "dealCards()">Start Game</button>
       </td>
     </tr>
 </table>

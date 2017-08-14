@@ -6,6 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+
 export class HeaderComponent implements OnInit {
     constructor() { }
     ngOnInit(){
@@ -25,14 +26,7 @@ function incrementValue()
     }
 }
 
-function decreaseValue()
+function dealCards()
 {
-  var value = parseInt((<HTMLInputElement> document.getElementById('number')).value, 10);
-  if (value == 2) {
-     (<HTMLInputElement> document.getElementById("btnRemove")).disabled = true; 
-  }
-  else{
-    value = value - 1;
-    (<HTMLInputElement> document.getElementById('number')).value = value.toString();
-  }
+    var noPlayer  = parseInt((<HTMLInputElement> document.getElementById('number')).value, 10);
 }
