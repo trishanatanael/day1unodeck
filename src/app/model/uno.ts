@@ -60,6 +60,21 @@ export class UnoDeck{
     //shuffle
     private shuffle(times: number= 5): void{
         //use loop
+        var theLength = this.cards.length - 1;
+        var toSwap;
+        var tempCard;
+        
+        //shuffle 5 times
+        //for (){
+            for ( var i = theLength; i > 0; i--) {
+                toSwap = Math.floor(Math.random() * i);
+                tempCard = this.cards[i];
+                this.cards[i] = this.cards[toSwap];
+                this.cards[toSwap] = tempCard;
+            }
+        //}
+        //then take the 7 cards for each player
+        this.take();
     }
     public take(): Card{
         return(this.cards.pop());
