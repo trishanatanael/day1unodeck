@@ -9,7 +9,7 @@ import { Card } from '../model/uno';
 })
 export class DisplayComponent implements OnInit {
 
-  @Input() contents: ;
+   @Input() contents: Players[];
 
   constructor() { }
 
