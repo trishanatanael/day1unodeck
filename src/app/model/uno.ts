@@ -4,6 +4,9 @@ export interface Card {
     color: string;
     imageUrl: string;
 }
+export interface Player {
+    cards: Card[];
+}
 export class UnoDeck{
     private static COLORS: string[] = ["red","green","blue","yellow"]
     private cards: Card[] = [];

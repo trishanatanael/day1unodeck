@@ -1,20 +1,39 @@
-<h1><code>Uno</code></h1>
-<table>
+<div>
+  <h1>Uno Game</h1>
+  <table>
     <th>Number of players:</th>
     <tr>
-        <td>
-          <input type="text" id= "number" readonly="true"/>
-        </td>
-        <td>
-            <button type="button" (click) = "incrementValue()" id="btnAdd">Add</button>
-        </td>
-        <td>
-          <button type="button" (click) = "decreaseValue()"id="btnRemove">Remove</button>
-        </td>
+      <td>
+        <input type="text" id="number" readonly="true" />
+      </td>
+      <td>
+        <button type="button" (click)="incrementValue()" id="btnAdd">Add</button>
+      </td>
+      <td>
+        <button type="button" (click)="decreaseValue()" id="btnRemove">Remove</button>
+      </td>
     </tr>
     <tr>
       <td>
-         <button type="button" (click) = "dealCards()">Start Game</button>
+        <button type="button" (click)="dealCards()">Start Game</button>
       </td>
     </tr>
-</table>
+  </table>
+</div>
+
+<div id = "displayCards">
+  <h1>Let's Play!</h1>
+  <table>
+    <tr *ngFor="let i of contents">
+      <td>
+        <img [src]="i.item.imageUrl" width="28px">
+      </td>
+      <td>
+        {{ i.item.name }}
+      </td>
+      <td>
+        {{ i.quantity }}
+      </td>
+    </tr>
+  </table>
+</div>
