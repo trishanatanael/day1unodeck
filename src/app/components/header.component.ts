@@ -1,4 +1,4 @@
-import { Card, Player } from '../model/uno';
+import { Card, Player, UnoDeck } from '../model/uno';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -8,18 +8,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class HeaderComponent implements OnInit {
-    totalPlayer: number;
-    playerArr: Player[]=[];
-    deck: Card;
+    
+    public static totalPlayer: number = 2;
+    public deck:UnoDeck = new UnoDeck;
     
     constructor() { }
-    
+
     ngOnInit(){
-        (<HTMLInputElement> document.getElementById("number")).value = "2";
-        (<HTMLInputElement> document.getElementById("btnRemove")).disabled = true;
     }
     
-    incrementValue() : void {
+    public incrementValue() : void {
         var value = parseInt((<HTMLInputElement> document.getElementById('number')).value, 10);
         if (value == 7) {
             (<HTMLInputElement> document.getElementById("btnAdd")).disabled = true;
@@ -32,7 +30,7 @@ export class HeaderComponent implements OnInit {
         
         }
         
-    decreaseValue() : void {
+    public decreaseValue() : void {
         var value = parseInt((<HTMLInputElement> document.getElementById('number')).value, 10);
         if (value == 2) {
             (<HTMLInputElement> document.getElementById("btnRemove")).disabled = true;
@@ -44,8 +42,11 @@ export class HeaderComponent implements OnInit {
         }
         }
         
-    dealCards() : void {
+    public getPlayersCount : number {
         var noPlayer  = parseInt((<HTMLInputElement> document.getElementById('number')).value, 10);
-        
+        return noPlayer;
         }
+    public dealCards(){
+
+    }
 }

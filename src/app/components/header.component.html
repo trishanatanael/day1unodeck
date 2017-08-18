@@ -7,10 +7,10 @@
         <input type="text" id="number" readonly="true" />
       </td>
       <td>
-        <button type="button" (click)="incrementValue()" id="btnAdd">Add</button>
+        <button type="button" (click)="incrementValue()" id="btnAdd">Add Player</button>
       </td>
       <td>
-        <button type="button" (click)="decreaseValue()" id="btnRemove">Remove</button>
+        <button type="button" (click)="decreaseValue()" id="btnRemove">Remove Player</button>
       </td>
     </tr>
     <tr>
@@ -24,15 +24,12 @@
 <div id = "displayCards">
   <h1>Let's Play!</h1>
   <table>
-    <tr *ngFor="let i of contents">
+    <tr *ngFor="let player of dealCards()">
       <td>
-        <img [src]="i.item.imageUrl" width="28px">
+        {{player.name}}
       </td>
-      <td>
-        {{ i.item.name }}
-      </td>
-      <td>
-        {{ i.quantity }}
+      <td *ngFor="let card of player.cards">
+        <img src={{card.image}}>
       </td>
     </tr>
   </table>
