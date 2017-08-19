@@ -1,10 +1,10 @@
+<h1>Welcome to Uno Game</h1>
 <div>
-  <h1>Uno Game</h1>
   <table>
     <th>Number of players:</th>
-    <tr>
+    
       <td>
-        <input type="text" id="number" readonly="true" />
+        <input type="text" id="number" value = "2" readonly="true" />
       </td>
       <td>
         <button type="button" (click)="incrementValue()" id="btnAdd">Add Player</button>
@@ -12,15 +12,11 @@
       <td>
         <button type="button" (click)="decreaseValue()" id="btnRemove">Remove Player</button>
       </td>
-    </tr>
-    <tr>
       <td>
-        <button type="button" (click)="dealCards()">Start Game</button>
+        <button type="button" (click)="getPlayersCount()" class="md-buttonStart">Start Game</button>
       </td>
-    </tr>
   </table>
 </div>
-
 <div id = "displayCards">
   <h1>Let's Play!</h1>
   <table>
@@ -34,3 +30,8 @@
     </tr>
   </table>
 </div>
+<hr>
+<footer>
+  Created by SA 44 <br/>
+  Justin Arvin Amit, Shang Ziqi, Trisha Clarissa Natanael
+</footer>

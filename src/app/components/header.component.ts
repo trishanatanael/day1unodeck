@@ -1,5 +1,6 @@
 import { Card, Player, UnoDeck } from '../model/uno';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -9,44 +10,57 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 export class HeaderComponent implements OnInit {
     
-    public static totalPlayer: number = 2;
+    public static totalPlayer: number = parseInt((<HTMLInputElement> document.getElementById("number")).toString());
+    public static totalPlayerText: String = HeaderComponent.totalPlayer.toString();
     public deck:UnoDeck = new UnoDeck;
-    
-    constructor() { }
+    public players:Player[] = [];
+   
+    constructor() {}
 
     ngOnInit(){
+         (<HTMLDivElement> document.getElementById("displayCards")).style.visibility = "hidden";
     }
     
     public incrementValue() : void {
-        var value = parseInt((<HTMLInputElement> document.getElementById('number')).value, 10);
-        if (value == 7) {
+        if (HeaderComponent.totalPlayer == 7) {
             (<HTMLInputElement> document.getElementById("btnAdd")).disabled = true;
         }
         else{
-        value = value +1;
-            (<HTMLInputElement> document.getElementById('number')).value = value.toString();
+        
             (<HTMLInputElement> document.getElementById("btnRemove")).disabled = false;
+            HeaderComponent.totalPlayer = HeaderComponent.totalPlayer + 1;
         }
         
         }
         
     public decreaseValue() : void {
-        var value = parseInt((<HTMLInputElement> document.getElementById('number')).value, 10);
-        if (value == 2) {
+        ;
+        if (HeaderComponent.totalPlayer == 2) {
             (<HTMLInputElement> document.getElementById("btnRemove")).disabled = true;
         }
         else{
-        value = value - 1;
-            (<HTMLInputElement> document.getElementById('number')).value = value.toString();
             (<HTMLInputElement> document.getElementById("btnAdd")).disabled = false;
+             HeaderComponent.totalPlayer = HeaderComponent.totalPlayer - 1;
         }
         }
         
-    public getPlayersCount : number {
-        var noPlayer  = parseInt((<HTMLInputElement> document.getElementById('number')).value, 10);
-        return noPlayer;
+    public getPlayersCount() : number {
+        return HeaderComponent.totalPlayer;
         }
-    public dealCards(){
 
+
+    public dealCards(){
+        (<HTMLInputElement> document.getElementById("displayCards")).disabled = false;
+        this.deck.Shuffle();
+        this.players = [];
+        
+        for(let i = 0; i<HeaderComponent.totalPlayer; i++) {
+        let playerCards:Card[] = [];
+        let nxtCard = 0;
+            for(let num = 0; num<7; num++) {
+            nxtCard = i + (num * 7 );
+            playerCards.push(this.deck.Take(nxtCard)); 
+            }
+        }
     }
 }
