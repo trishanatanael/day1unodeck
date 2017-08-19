@@ -2,9 +2,8 @@
 <div>
   <table>
     <th>Number of players:</th>
-    
       <td>
-        <input type="text" id="number" value = "2" readonly="true" />
+         <p>{{getPlayersCount()}}</p>
       </td>
       <td>
         <button type="button" (click)="incrementValue()" id="btnAdd">Add Player</button>
@@ -13,13 +12,13 @@
         <button type="button" (click)="decreaseValue()" id="btnRemove">Remove Player</button>
       </td>
       <td>
-        <button type="button" (click)="getPlayersCount()" class="md-buttonStart">Start Game</button>
+        <button type="button" (click)="dealCards()" class="md-buttonStart">Start Game</button>
       </td>
   </table>
 </div>
 <div id = "displayCards">
   <h1>Let's Play!</h1>
-  <table>
+  <!-- <table>
     <tr *ngFor="let player of dealCards()">
       <td>
         {{player.name}}
@@ -28,7 +27,7 @@
         <img src={{card.image}}>
       </td>
     </tr>
-  </table>
+  </table> -->
 </div>
 <hr>
 <footer>

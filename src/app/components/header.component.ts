@@ -10,18 +10,21 @@ import { NgIf } from '@angular/common';
 
 export class HeaderComponent implements OnInit {
     
-    public static totalPlayer: number = parseInt((<HTMLInputElement> document.getElementById("number")).toString());
-    public static totalPlayerText: String = HeaderComponent.totalPlayer.toString();
+    public static totalPlayer: number = 2;
     public deck:UnoDeck = new UnoDeck;
     public players:Player[] = [];
    
-    constructor() {}
+    constructor() {
+        
+    }
 
     ngOnInit(){
          (<HTMLDivElement> document.getElementById("displayCards")).style.visibility = "hidden";
+         (<HTMLInputElement> document.getElementById("btnRemove")).disabled = true;
+
     }
     
-    public incrementValue() : void {
+    incrementValue() : void {
         if (HeaderComponent.totalPlayer == 7) {
             (<HTMLInputElement> document.getElementById("btnAdd")).disabled = true;
         }
@@ -34,7 +37,7 @@ export class HeaderComponent implements OnInit {
         }
         
     public decreaseValue() : void {
-        ;
+        
         if (HeaderComponent.totalPlayer == 2) {
             (<HTMLInputElement> document.getElementById("btnRemove")).disabled = true;
         }
@@ -49,9 +52,9 @@ export class HeaderComponent implements OnInit {
         }
 
 
-    public dealCards(){
-        (<HTMLInputElement> document.getElementById("displayCards")).disabled = false;
-        this.deck.Shuffle();
+    public dealCards(): void {
+        (<HTMLDivElement> document.getElementById("displayCards")).style.visibility;
+        /*this.deck.Shuffle();
         this.players = [];
         
         for(let i = 0; i<HeaderComponent.totalPlayer; i++) {
@@ -61,6 +64,6 @@ export class HeaderComponent implements OnInit {
             nxtCard = i + (num * 7 );
             playerCards.push(this.deck.Take(nxtCard)); 
             }
-        }
+        }*/
     }
 }
