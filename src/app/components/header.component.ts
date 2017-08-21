@@ -54,7 +54,11 @@ export class HeaderComponent implements OnInit {
     public getPlayers():Player[] {
         return this.players;
         }
-
+    
+    public restart(): void {
+        HeaderComponent.totalPlayer = 2;
+        this.players = [];
+        }
     public dealCards(): void {
         
         this.deck.Shuffle();
@@ -73,3 +77,4 @@ export class HeaderComponent implements OnInit {
         }
     }
 }
+
