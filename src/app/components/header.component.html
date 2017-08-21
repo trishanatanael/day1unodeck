@@ -16,18 +16,15 @@
       </td>
   </table>
 </div>
-<div id = "displayCards">
-  <h1>Let's Play!</h1>
-  <!-- <table>
-    <tr *ngFor="let player of dealCards()">
-      <td>
-        {{player.name}}
-      </td>
+<div>
+   <table>
+    <tr *ngFor="let player of getPlayers()">
+        <td>{{player.name}}</td>
       <td *ngFor="let card of player.cards">
-        <img src={{card.image}}>
+        <img src={{card.imageUrl}}>
       </td>
     </tr>
-  </table> -->
+  </table> 
 </div>
 <hr>
 <footer>

@@ -19,12 +19,12 @@ export class HeaderComponent implements OnInit {
     }
 
     ngOnInit(){
-         (<HTMLDivElement> document.getElementById("displayCards")).style.visibility = "hidden";
+
          (<HTMLInputElement> document.getElementById("btnRemove")).disabled = true;
 
     }
     
-    incrementValue() : void {
+    public incrementValue() : void {
         if (HeaderComponent.totalPlayer == 7) {
             (<HTMLInputElement> document.getElementById("btnAdd")).disabled = true;
         }
@@ -50,20 +50,26 @@ export class HeaderComponent implements OnInit {
     public getPlayersCount() : number {
         return HeaderComponent.totalPlayer;
         }
-
+    
+    public getPlayers():Player[] {
+        return this.players;
+        }
 
     public dealCards(): void {
-        (<HTMLDivElement> document.getElementById("displayCards")).style.visibility;
-        /*this.deck.Shuffle();
+        
+        this.deck.Shuffle();
         this.players = [];
         
         for(let i = 0; i<HeaderComponent.totalPlayer; i++) {
         let playerCards:Card[] = [];
         let nxtCard = 0;
             for(let num = 0; num<7; num++) {
-            nxtCard = i + (num * 7 );
-            playerCards.push(this.deck.Take(nxtCard)); 
+                nxtCard = i + (num * 7 );
+                playerCards.push(this.deck.Take(nxtCard)); 
             }
-        }*/
+        let playerNo:number = i + 1;
+        let player: Player = {name: "Player "+ playerNo, cards: playerCards}
+        this.players.push(player);
+        }
     }
 }

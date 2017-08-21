@@ -57,18 +57,18 @@ export class UnoDeck{
         this.cards.push({ 
         value: j.toString(), 
         color: "Wild Card",
-        imageUrl: "/assets/images/c4_0"+ j +".png"
+        imageUrl: "/assets/images/c4_00.png"
         })
     }
     
     //create deck for the +4
-     for( let j = 0; j<4; j++ ){
+     for( let j = 0; j<2; j++ ){
         //color
         //c4_00 c4_01
         this.cards.push({ 
         value: j.toString(), 
         color:"Take 4",
-        imageUrl: "/assets/images/c4_0"+ j +".png"
+        imageUrl: "/assets/images/c4_01.png"
         })
     }
     
