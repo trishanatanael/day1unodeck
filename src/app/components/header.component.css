@@ -1,8 +1,14 @@
 .md-buttonStart {
   font-size: 14px;
   text-align: center;
-  text-transform: uppercase;
   text-decoration:none;
   color: white;
   background-color: green;
+}
+.md-buttonReStart {
+  font-size: 14px;
+  text-align: center;
+  text-decoration:none;
+  color: white;
+  background-color: red;
 }
